@@ -1,4 +1,22 @@
-body{
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        transition: .1s;
+    }
+
+   
+
+    .title{
+        display: none;
+    }
+    .fa-heart{
+        padding: 1rem;
+        margin-left: 1rem;
+    }
+   
+    
+    body{
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     background-color: black;
@@ -12,14 +30,15 @@ body{
     }
     .sidebar{
         background-color:black;
-        width:340px;
         border-radius: 1rem; 
-        margin: 0.5rem;
+        margin: 0rem 0.5rem;
     }
     .main-content{
-         flex: 1;/*sidebar k alwa baqi sari jgh maincontent ko mil jygiii isse/ */
+        /* flex: 2; */
+        /* sidebar k alwa baqi sari jgh maincontent ko mil jygiii isse */
+        width: 100%;
         border-radius: 1rem;
-        overflow: auto;
+        overflow-y: scroll;
         background-color: #121212;
         padding: 0 1.5rem 0 1.5rem;
     }
@@ -27,9 +46,15 @@ body{
         background-color: yellow;
         position: fixed;
         bottom: 0px;
-        width: 100vw;
-        height: 72px;
+        height: 4.9rem;
+        width: 100%;
         background-color: black;
+    }
+    .flex-player{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: space-between;
     }
     a{
         text-decoration: none;
@@ -43,12 +68,13 @@ body{
         justify-content: center;
         height: 100px;
         /* justify-content: space-evenly; */
-        padding: 0.5rem 0.75rem;
+        padding: 0rem 0.75rem;
+        margin-bottom: .5rem;
     }
     .nav-option {
         line-height: 2.5rem;
         opacity: 0.7;
-        padding: 0.5rem 0.75rem;
+        padding: 0rem 0.75rem;
     }
     .nav-option i {
         font-size: 1.25rem;
@@ -88,12 +114,33 @@ body{
     .icons i:hover{
         opacity: 1;
     }
+
+    .vertical{
+        height: 2.5rem;
+    }
+
+    .spoty-icon img{
+        width: 1.5rem;
+    }
+    .spoty-icon p{
+        margin: 0rem 1rem;
+    }
+    .spoty-icon{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0px 12px;
+    }
     .box {
         background-color: #232323;
         height: 8rem;
         border-radius: 0.75rem;
-        margin: 0.75rem 0 1.75rem  0;
+        margin: 1rem auto;
         padding: 0.75rem 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
     }
     .box-p1{
         font-size: 1rem;
@@ -120,8 +167,7 @@ body{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding:1rem 0 1rem 0; 
-        z-index: 10;
+        padding:1rem 0 1rem 0;
     }
     .sticky-nav-icons {
         margin-left: 0.75rem;
@@ -145,18 +191,71 @@ body{
         }
     }
     .card {
+        display: inline-block;
         background-color: #232323;
-        width: 250px;
-        border-radius: 0.5rem;
+        border-radius: 0.5rem;  
         padding: 1rem;
-        margin-left: 1.5rem;
-        margin-top: 2rem;
-    }
-    .cards-container {
-        display: flex;
-        flex-wrap: wrap;
+        margin:1rem;
+        width: 10rem;
+        height: 15rem;
+        flex-shrink: 0;
+       
        
     }
+
+    
+    .cards-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        margin: 1rem 0rem;
+        
+       
+    }
+
+    .trending-card {
+        display: flex;
+        background-color: #232323;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 1rem;
+        width: 16rem;
+        height: 7rem;
+        flex-shrink: 0;
+        justify-content: space-between;
+    }
+
+    .trending-cards-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 21rem;
+        overflow: hidden;
+        margin: 1rem 0rem;
+        
+       
+    }
+
+    .trending-card img {
+        border-radius: 0.5rem;
+        height: 5rem;
+    }
+    .trending-card-title {
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0.5rem;
+    }
+    .trending-card-info {
+        font-size: 0.85rem;
+    }
+
+
+
+    
     .card img {
         border-radius: 0.5rem;
         width: 100%;
@@ -166,7 +265,6 @@ body{
     }
     .card-info {
         font-size: 0.85rem;
-        opacity: 0.5;
     }
     .last-cards {
         display: flex;
@@ -184,18 +282,37 @@ body{
         opacity: 0.4;
     }
     .music-player {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
     }
     
     .player {
-        width: 50%;
+        width: 33.33%;
+        display: flex;
+        flex-grow: 1;
+        margin: 0px 2rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 70px;
         /* background-color: olivedrab; */
         
     }
     
     /* ----PLAYER CONTROL */
+    
+    
+    .control{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:15rem;
+        height: 5rem;
+        /* border: 2px solid white; */
+        border-radius: 1rem;
+        background: #000;
+    }
     .player-control-icon {
         height: 1rem;
         margin-right: 2rem;
@@ -203,8 +320,14 @@ body{
     }
     .player-controls {
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
+        width: 100%;
         align-items: center;
+    }
+
+    .player-controls img{
+       padding: 0;
+       margin: 0;
     }
     .player-control-icon:hover {
         opacity:1;
@@ -213,9 +336,10 @@ body{
         display: flex;
       justify-content:center ;
       align-items: center;
+      width: 100%;
     }
     .progress-bar {
-        width: 70%;
+        width: 100%;
         cursor: pointer;
         appearance: none;
         background-color: transparent;
@@ -235,16 +359,26 @@ body{
     }
     /* ---------ALBUM SECTION----- */
     .album {
-        width: 25%;
         display: flex;
-        /* justify-content: space-between; */
+        flex-wrap: wrap;
+        width: 33.33%;
+    }
+
+    #hrt{
+        display: flex;
         align-items: center;
-        /* background-color: orange; */
-        margin-left: 0.7rem;
+        justify-content: center;
+        flex-grow: 1;
+        margin: 0;
+        font-size: larger;
+    }
+    .album p{
+        font-size: smaller;
     }
     .album img {
         width: 3rem;
         height: 3rem;
+        margin: auto 1rem;
     }
     .album-info {
         margin-left: 1rem;
@@ -254,13 +388,9 @@ body{
         margin-left: 3rem;
     }
     /* ------CONTROL SELECTION */
-    .control {  
-        width: 25%;
-        display: flex;
-        justify-content: space-between;
-    }
+    
     .control-bar {
-        width: 40%;
+        width: 80%;
         cursor: pointer;
         appearance: none;
         background-color: transparent;
@@ -288,11 +418,244 @@ body{
         opacity: 1;
     }
     .album-content{
-        margin-left: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 1rem  auto;
+
+    }
+    .singer-name{
+        width: 100%;
+        font-size: 1px;
+        margin-top: .2rem;
+    }
+    .album-content p{
+        display: flex;
+        align-items: center;
+        width: 10rem;
+        justify-content: center;
     }
     .control-item{
-        padding: 2.5rem;
+        display: flex;
+        width: 70%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .ctrl-btn{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: .5rem;
+
+    }
+    .ctrl-btn i{
+        padding: 0;
+        margin: 0 ;
+    }
+    .inputbar{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between; 
+
+    }
+
+    label{
+        display: none;
+    }
+
+    .tabs{
+        display: none;
+    }
+    
+
+    @media(max-width: 870px){
+       
+        .control{
+            display: none;
+            justify-content: center;
+            align-items: center;
+            width:15rem;
+            height: 5rem;
+            /* border: 2px solid white; */
+            border-radius: 1rem;
+            background: #000;
+        }
+
+        .slide{
+            right: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:15rem;
+            height: 5rem;
+            position: fixed;
+            bottom: 119px;
+            /* border: 2px solid white; */
+            border-radius: 1rem;
+            z-index: 5;
+            opacity: 1;
+            background: #000;
+        }
+
+
+        label{
+            /* display: block;
+            line-height: 78px;
+            font-size: 1.7rem;
+            flex: 1;
+            text-align: center; */
+
+            display: flex;
+            justify-content: center;
+            transition: 1s;
+            height: 100%;
+            width: 30%;
+            padding: 0rem 2rem;
+            align-items: center;
+            font-size: 1.7rem;
+        }
+
+       
+        .badge{
+            display: none;
+        }
+        .player{
+            margin: 0rem 1rem;
+            height: 100%;
+            justify-content: space-evenly;
+            flex-grow: 1;
+        }
+        .player-controls{
+            flex: 1;
+        }
+        .sidebar{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            margin: 0;
+            justify-content: center;
+            align-items: center;
+        }
+        .sidebar a , .option .icon , .spoty-icon p{
+            display: none;
+        }
+
+       
+        .library, .lib-box{
+            display: flex;
+            margin: 0;
+        }
+
+        .nav, .library{
+            width: 50%;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            border-radius: 0;
+            height: 100%;
+            margin-bottom: 0;
+            height: 40.5px;
+        }
+        .main{
+            padding:.75rem .75rem 0rem .75rem ;
+        }
+
+        .library .box{
+            display: none;
+        }
+        .nav-option{
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 5rem;
+        }
+        .music-player{
+            position: absolute;
+            bottom: 40.5px;
+            left: 0;
+        }
+        .player-hide , .album .singer-name ,#hrt{
+            display: none;
+        }
+        .album{
+            flex-grow: 1;
+            justify-content: center;
+        }
+        .album-content{
+            width:40%;
+            margin: 0rem  auto;
+        }     
+        
+        .tabs{
+            display: none;
+        }
+        
+       
+    }
+
+
+@media(max-width:648px){
+
+    .title{
+        display: inline-block;
+    }
+    .bgicon{
+        display: none;
+    }
+    .sticky-nav{
+        display: flex;
         justify-content: space-between;
     }
+    .sticky-nav-icons{
+        margin-left: 0;
+    }
+ 
+    .trending-card {
+        width: 9rem;
+        height: 3rem;
+        padding: 0;
+        margin: 0.1rem;
+    }
+
+    .trending-cards-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 10rem;
+        overflow: hidden;
+        margin: 1rem 0rem;
+    }
+
+    .trending-card img{
+        width: 3.75rem;
+        height: 100%;
+    }
+    .trending-card-title {
+        font-size: .6rem;
+    }
+
+    .tabs{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-left: .2rem;
+    }
+
+    .tabs button{
+        padding: .3rem .7rem; 
+        margin-right: .2rem;
+        border-radius: 1rem;
+        background-color: #232323;
+        border: none;
+        color: #fff;
+    }
+}
     
     
