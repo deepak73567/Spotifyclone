@@ -361,7 +361,7 @@
     .album {
         display: flex;
         flex-wrap: wrap;
-        width: 33.33%;
+        width: 38.33%;
     }
 
     #hrt{
@@ -664,6 +664,58 @@
         overflow-y: scroll;
         background-color:black;
         padding: 0px 0.5rem;
+    }
+}
+
+@media(max-width: 360px){
+
+    .trending-cards-container{
+        height: 10rem;
+        width: 20rem;
+    }
+
+    .trending-card {
+        width: 9.6rem;
+        height: 3rem;
+        margin: 0;
+        padding: 0;
+    }
+    .trending-card img {
+        height: 100%;
+    }
+
+    .trending-card-title{
+        font-size:  0.5rem;
+    }
+
+    .main-content{
+        /* flex: 2; */
+        /* sidebar k alwa baqi sari jgh maincontent ko mil jygiii isse */
+        width: 100%;
+        border-radius: 1rem;
+        overflow-y: scroll;
+        background-color: #000000;
+        padding: 0rem .1rem;
+    }
+    
+    .card {
+        margin: .1rem;
+        background-color: black;
+        padding: .2rem;
+        
+    }
+    .card-info{
+        font-size: .5rem;
+    }
+
+    .album{
+        display: flex;
+        flex: 1;
+        width: 8.4rem;
+    }
+
+    .main{
+        padding: 0px  .6rem;
     }
 }
     
